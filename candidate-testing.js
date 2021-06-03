@@ -36,7 +36,7 @@ function askQuestion() {
   // Ask Questinos
 
   // loop through the arraay of questions using a for loop with a input statement in each loop. The number of loops depends the number of stings inside the questions array. In this case the lenth of the question array is 4 and the q variable of the loop will start at 0 and increase to 4. Ex. q=0 candidateAnswers[q] would display the string "Who is the first woman in space?" and answers[q] would be "Sally Ride"
-  for (var q = 0; q < totalQuestions; q++){
+  for (let q = 0; q < totalQuestions; q++){
     candidateAnswers[q] = input.question(q + 1 + ") " + questions[q] + "\nYour answer: ");
     console.log("Correct Answer: " + correctAnswers [q] + "\n")
   }
@@ -62,7 +62,7 @@ function gradeQuiz(candidateAnswers) {
   let numberCorrect=0;
 
   // loop through the candidateAnsers array and see how many the canidate got correct.
-  for (var q=0; q<totalQuestions;q++){
+  for (let q=0; q<totalQuestions;q++){
     // Check if both the canidate answer and the correct answer are equal. Convert both strings to upper case so that thier are no case sesative errors.
     if (candidateAnswers[q].toUpperCase() === correctAnswers[q].toUpperCase())   {
       numberCorrect++;
