@@ -5,23 +5,37 @@ const input = require('readline-sync');
 // TODO 1.1a: Define candidateName // 
 let candidateName;
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question;
-let correctAnswer;
+let question = "Who was the first American woman in space? ";
+let correctAnswer = "Sally Ride";
 let candidateAnswer;
-let questions;
-let correctAnswers;
-let candidateAnswers;
+// candidateAnswer = input.question(question);
+// if (candidateAnswer===correctAnswer) {
+//  console.log("Correct");
+// } else {
+//  console.log("Incorrect");
+// }
 
+const questions = ["Who was the first American woman in space? ",
+                  "True or false: 5 kilometer == 5000 meters?",
+                  "(5 + 3)/2 * 10 = ?","Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2?",
+                  "What is the minimum crew size for the ISS?"];
+const correctAnswers = ["Sally Ride","true","40","Trajectory","3"];
+let candidateAnswers = [];
+
+let correctPerectage = 0;
+const passingPercentage = .8;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-
+  candidateName = input.question("Candidate Name: ");
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-
-
+  for (var q=0; q<questions.length;q++){
+    candidateAnswers[q] = input.question(q + 1 + ") " + questions[q] + "\nYour answer: ");
+    console.log("Correct Answer: " + correctAnswers [q] + "\n")
+  }
 }
 
 function gradeQuiz(candidateAnswers) {
@@ -30,7 +44,21 @@ function gradeQuiz(candidateAnswers) {
 
 
   let grade;
-  
+  let numberCorrect=0;
+
+  for (var q=0; q<questions.length;q++){
+    if (candidateAnswers[q].toUpperCase() === correctAnswers[q].toUpperCase())   {
+      numberCorrect++;
+    }
+  }
+  correctPercentage = numberCorrect / questions.length;
+  console.log(">>> Overall Grade: " + correctPercentage*100 + "% (" + numberCorrect + " of " + questions.length + " responses correct) <<<");
+  if (correctPercentage >= passingPercentage) {
+    console.log(">>> Status: PASSED");
+  } else {
+    console.log(">>> Status: FAILED");
+  }
+  grade = correctPercentage*100;
 
   return grade;
 }
