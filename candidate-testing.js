@@ -60,15 +60,19 @@ function gradeQuiz(candidateAnswers) {
   let grade;
   // This variable will store the number answers the candidate gets right
   let numberCorrect=0;
+
+  // loop through the candidateAnsers array and see how many the canidate got correct.
   for (var q=0; q<totalQuestions;q++){
-    // Check if both the canidate answer and the correct answer are equal. conver both to upper case so that thier are no case sesative errors.
+    // Check if both the canidate answer and the correct answer are equal. Convert both strings to upper case so that thier are no case sesative errors.
     if (candidateAnswers[q].toUpperCase() === correctAnswers[q].toUpperCase())   {
       numberCorrect++;
     }
   }
-  // deviding the number of answers correct by the number of questions will give us the grade perctange when multiplied by 100
 
+  // deviding the number of answers correct by the number of questions will give us the grade perctange when multiplied by 100
   grade = (numberCorrect / questions.length) * 100;
+
+  // Log to console the overall grade and how many correct answers the candidate got out of the total number of questions.
 
   console.log(">>> Overall Grade: " + grade + "% (" + numberCorrect + " of " + totalQuestions + " responses correct) <<<");
 
@@ -79,7 +83,7 @@ function gradeQuiz(candidateAnswers) {
     console.log(">>> Status: FAILED");
   }
 
-
+  // Return candidate grade from function call
   return grade;
 }
 
