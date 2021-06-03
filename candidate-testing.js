@@ -17,9 +17,9 @@ const questions = ["Who was the first American woman in space? ",
                   "What is the minimum crew size for the ISS?"];
 const correctAnswers = ["Sally Ride","true","40","Trajectory","3"];
 let candidateAnswers = [];
-
+let totalQuestions = questions.length;
 let correctPerectage = 0;
-const passingPercentage = .8;
+const passingPercentage = 80;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -30,9 +30,13 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   //Part 1
 
-// candidateAnswer = input.question(question);
+  // candidateAnswer = input.question(question);
 
-  for (var q=0; q<questions.length;q++){
+  // Part II
+  // Ask Questinos
+
+  // loop through the arraay of questions using a for loop with a input statement in each loop. The number of loops depends the number of stings inside the questions array. In this case the lenth of the question array is 4 and the q variable of the loop will start at 0 and increase to 4. Ex. q=0 candidateAnswers[q] would display the string "Who is the first woman in space?" and answers[q] would be "Sally Ride"
+  for (var q = 0; q < totalQuestions; q++){
     candidateAnswers[q] = input.question(q + 1 + ") " + questions[q] + "\nYour answer: ");
     console.log("Correct Answer: " + correctAnswers [q] + "\n")
   }
@@ -42,28 +46,39 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   // Part 1 
-  // if (candidateAnswer===correctAnswer) {
+  // check if candidate answer is correct, convert to uppercase to prevent case sensitve errors
+  //
+  // if (candidateAnswer.toUpperCase()===correctAnswer.toUpperCase()) {
   //  console.log("Correct");
   // } else {
   //  console.log("Incorrect");
   // }
 
-  let grade;
-  let numberCorrect=0;
+  // Part 3
+  // Grading
 
-  for (var q=0; q<questions.length;q++){
+  let grade;
+  // This variable will store the number answers the candidate gets right
+  let numberCorrect=0;
+  for (var q=0; q<totalQuestions;q++){
+    // Check if both the canidate answer and the correct answer are equal. conver both to upper case so that thier are no case sesative errors.
     if (candidateAnswers[q].toUpperCase() === correctAnswers[q].toUpperCase())   {
       numberCorrect++;
     }
   }
-  correctPercentage = numberCorrect / questions.length;
-  console.log(">>> Overall Grade: " + correctPercentage*100 + "% (" + numberCorrect + " of " + questions.length + " responses correct) <<<");
-  if (correctPercentage >= passingPercentage) {
+  // deviding the number of answers correct by the number of questions will give us the grade perctange when multiplied by 100
+
+  grade = (numberCorrect / questions.length) * 100;
+
+  console.log(">>> Overall Grade: " + grade + "% (" + numberCorrect + " of " + totalQuestions + " responses correct) <<<");
+
+  // Check is the candidates grade is equal or great than 80, if so Display Passed or if below 80 display failed
+  if (grade >= passingPercentage) {
     console.log(">>> Status: PASSED");
   } else {
     console.log(">>> Status: FAILED");
   }
-  grade = correctPercentage*100;
+
 
   return grade;
 }
