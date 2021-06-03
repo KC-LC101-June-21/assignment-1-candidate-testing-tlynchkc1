@@ -8,12 +8,8 @@ let candidateName;
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer;
-// candidateAnswer = input.question(question);
-// if (candidateAnswer===correctAnswer) {
-//  console.log("Correct");
-// } else {
-//  console.log("Incorrect");
-// }
+
+
 
 const questions = ["Who was the first American woman in space? ",
                   "True or false: 5 kilometer == 5000 meters?",
@@ -32,6 +28,10 @@ function askForName() {
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
+  //Part 1
+
+// candidateAnswer = input.question(question);
+
   for (var q=0; q<questions.length;q++){
     candidateAnswers[q] = input.question(q + 1 + ") " + questions[q] + "\nYour answer: ");
     console.log("Correct Answer: " + correctAnswers [q] + "\n")
@@ -41,7 +41,12 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
+  // Part 1 
+  // if (candidateAnswer===correctAnswer) {
+  //  console.log("Correct");
+  // } else {
+  //  console.log("Incorrect");
+  // }
 
   let grade;
   let numberCorrect=0;
