@@ -9,7 +9,6 @@ let candidateName = "";
  let correctAnswer = "Sally Ride";
  let candidateAnswer = "";
 
-
 // console.log(`Part 1`);
 //  // Using input.question method ask for the user to input the candidates name and store it with the candidateName variable;
 // candidateName = input.question("Candidate Name: ");
@@ -50,9 +49,6 @@ let totalQuestions = questions.length;
 let correctPerectage = 0;
 // Passing Percentage
 const passingPercentage = 80;
-
-
-console.log(`Part 2&3\n`);
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
