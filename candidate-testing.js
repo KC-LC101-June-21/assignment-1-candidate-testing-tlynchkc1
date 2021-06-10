@@ -5,28 +5,28 @@ const input = require('readline-sync');
 // TODO 1.1a: Define candidateName // 
 let candidateName;
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question = "Who was the first American woman in space? ";
-let correctAnswer = "Sally Ride";
-let candidateAnswer;
+// let question = "Who was the first American woman in space? ";
+// let correctAnswer = "Sally Ride";
+// let candidateAnswer;
 
 
-console.log(`Part 1`);
- // Using input.question method ask for the user to input the candidates name and store it with the candidateName variable;
-candidateName = input.question("Candidate Name: ");
-// Using a template literal greet the user by askForName
-console.log(`Greetings ${candidateName}.`);
+// console.log(`Part 1`);
+//  // Using input.question method ask for the user to input the candidates name and store it with the candidateName variable;
+// candidateName = input.question("Candidate Name: ");
+// // Using a template literal greet the user by askForName
+// console.log(`Greetings ${candidateName}.`);
 
-// ask the question using the input.question method and store the result in the candidateAnswer variable
+// // ask the question using the input.question method and store the result in the candidateAnswer variable
 
-candidateAnswer = input.question(question);
+// candidateAnswer = input.question(question);
 
-// check to see if the user answered correctly. Check the correct answer and candidate answer match when both converted to all uppercase (this is to eliminate any syntax errors. Let the user know if his answer is correct or not.
+// // check to see if the user answered correctly. Check the correct answer and candidate answer match when both converted to all uppercase (this is to eliminate any syntax errors. Let the user know if his answer is correct or not.
 
-if (candidateAnswer.toUpperCase() === correctAnswer.toUpperCase()) {
-  console.log(`${candidateAnswer} is correct\n`);
-} else {
-  console.log(`${candidateAnswer} is incorrect\n`);
-}
+// if (candidateAnswer.toUpperCase() === correctAnswer.toUpperCase()) {
+//   console.log(`${candidateAnswer} is correct\n`);
+// } else {
+//   console.log(`${candidateAnswer} is incorrect\n`);
+// }
 
 // array of Questions. Stored as a const because these will not change
 
