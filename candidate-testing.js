@@ -12,13 +12,13 @@ let candidateName = "";
 
 // console.log(`Part 1`);
 //  // Using input.question method ask for the user to input the candidates name and store it with the candidateName variable;
-candidateName = input.question("Candidate Name: ");
+// candidateName = input.question("Candidate Name: ");
 // // Using a template literal greet the user by askForName
-console.log(`Greetings ${candidateName}.`);
+//console.log(`Greetings ${candidateName}.`);
 
 // // ask the question using the input.question method and store the result in the candidateAnswer variable
 
-candidateAnswer = input.question(question);
+//candidateAnswer = input.question(question);
 
 // // check to see if the user answered correctly. Check the correct answer and candidate answer match when both converted to all uppercase (this is to eliminate any syntax errors. Let the user know if his answer is correct or not.
 
